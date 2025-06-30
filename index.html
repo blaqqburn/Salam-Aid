@@ -4,6 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Salam Aid – Aiding Heart for the Voiceless</title>
+  
+  <!-- Meta tags for SEO and social sharing -->
+  <meta name="description" content="Salam Aid – Aiding Heart for the Voiceless. Unterstützen Sie humanitäre Hilfe in Kriegs- und Krisengebieten. Transparenz, Vertrauen und Hoffnung.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Salam Aid – Aiding Heart for the Voiceless" />
+  <meta property="og:description" content="Unterstützen Sie humanitäre Hilfe in Kriegs- und Krisengebieten. Transparenz, Vertrauen und Hoffnung." />
+  <meta property="og:image" content="https://blaqqburn.github.io/Salam-Aid/images/salam_aid_donation_qr.jpeg" />
+  <meta property="og:url" content="https://blaqqburn.github.io/Salam-Aid/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Salam Aid – Aiding Heart for the Voiceless" />
+  <meta name="twitter:description" content="Unterstützen Sie humanitäre Hilfe in Kriegs- und Krisengebieten. Transparenz, Vertrauen und Hoffnung." />
+  <meta name="twitter:image" content="https://blaqqburn.github.io/Salam-Aid/images/salam_aid_donation_qr.jpeg" />
+
   <style>
     body {
       margin: 0;
@@ -141,7 +158,6 @@
       margin: 2rem 0;
     }
     #share-section a, #share-section button {
-      background: #444;
       color: white;
       padding: 0.5rem 1rem;
       border-radius: 6px;
@@ -150,6 +166,7 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
       font-weight: bold;
+      display: inline-block;
     }
     #share-section a:hover, #share-section button:hover {
       background-color: #2e7d32;
@@ -182,11 +199,37 @@
 
     function copyLink() {
       navigator.clipboard.writeText("https://blaqqburn.github.io/Salam-Aid/").then(function () {
-        alert("Link copied to clipboard!");
+        alert("Link kopiert!");
       }, function (err) {
-        alert("Failed to copy link.");
+        alert("Kopieren fehlgeschlagen.");
       });
     }
+
+    // Dynamische Spenderliste
+    const donors = [
+      // Beispielspender - hier hinzufügen:
+      // {
+      //   name: "Kwabena Mensah",
+      //   amount: "€10",
+      //   date: "25.06.2025",
+      //   receiptImage: "images/donor1_receipt.jpg"
+      // }
+    ];
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const donorListDiv = document.getElementById('donor-list');
+
+      if (!donors.length) {
+        donorListDiv.innerHTML = `<em>Derzeit sind noch keine Spenden eingegangen. Seien Sie der Erste, der Salam Aid unterstützt.</em>`;
+      } else {
+        donorListDiv.innerHTML = donors.map(donor => `
+          <div style="border: 1px solid #c8e6c9; border-radius: 10px; padding: 1rem; background: #ffffff; width: 250px; text-align: center;">
+            <img src="${donor.receiptImage}" alt="Beleg von ${donor.name}" style="width: 100%; border-radius: 6px; object-fit: contain; max-height: 150px;">
+            <p style="margin-top: 0.5rem;"><strong>${donor.name}</strong><br><small>${donor.amount} – ${donor.date}</small></p>
+          </div>
+        `).join('');
+      }
+    });
   </script>
 </head>
 <body>
@@ -198,7 +241,7 @@
 
   <section>
     <div class="dove">
-      <img src="images/dove_peace.jpeg" alt="Dove of Peace" />
+      <img src="images/dove_peace.jpeg" alt="Friedenstaube" />
     </div>
 
     <h2>Warum wir existieren</h2>
@@ -226,14 +269,9 @@
     <div class="lang-note">
       🌍 Diese Seite ist auch in Arabisch und Englisch verfügbar basierend auf Ihren Browsereinstellungen.
     </div>
-
-    <h2>Transparenz & Dank</h2>
-    <p>
-      Jeder Unterstützer wird mit einem Dank erwähnt – wir zeigen Wertschätzung offen auf unserer Seite (außer bei Wunsch auf Anonymität). Gemeinsam schaffen wir Veränderung.
-    </p>
   </section>
 
-  <!-- NEW GRATITUDE & TRANSPARENCY + SOCIAL SHARE SECTION -->
+  <!-- Dankbarkeit & Transparenz + Social Share Section -->
   <section id="donation-gratitude">
     <h2>🌿 Dankbarkeit & Transparenz</h2>
     <p>Wir danken von Herzen jedem Unterstützer. Ihre Freundlichkeit bringt Licht und Hilfe dorthin, wo sie am meisten gebraucht wird.</p>
@@ -242,8 +280,8 @@
     <p style="font-style: italic; color: #555;">
       Vollständige Namen und Spendenbelege werden hier für maximale Transparenz angezeigt, sobald Unterstützung eingeht. ❤️
     </p>
-    <div>
-      <em>Derzeit sind noch keine Spenden eingegangen. Seien Sie der Erste, der Salam Aid unterstützt.</em>
+    <div id="donor-list" style="display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem; margin-top:1rem;">
+      <!-- Spender werden hier dynamisch geladen -->
     </div>
 
     <hr>
@@ -255,15 +293,4 @@
         <a href="https://wa.me/?text=Unterstützen%20Sie%20Salam%20Aid%20jetzt%20unter%20https%3A%2F%2Fblaqqburn.github.io%2FSalam-Aid%2F" target="_blank" class="whatsapp">WhatsApp</a>
         <a href="https://www.facebook.com/sharer/sharer.php?u=https://blaqqburn.github.io/Salam-Aid/" target="_blank" class="facebook">Facebook</a>
         <a href="https://twitter.com/intent/tweet?text=Unterstützen%20Sie%20Salam%20Aid%20und%20machen%20Sie%20einen%20Unterschied!%20https%3A%2F%2Fblaqqburn.github.io%2FSalam-Aid%2F" target="_blank" class="twitter">X (Twitter)</a>
-        <a href="https://t.me/share/url?url=https://blaqqburn.github.io/Salam-Aid/&text=Unterstützen%20Sie%20Salam%20Aid%20und%20verändern%20Sie%20Leben" target="_blank" class="telegram">Telegram</a>
-        <button onclick="copyLink()">📋 Link kopieren</button>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 Salam Aid – Frieden, Hoffnung, Mitgefühl.
-  </footer>
-
-</body>
-</html>
+        <a href="https://t.me/share/url?url=https://blaqqburn.github.io/Salam-Aid/&text=Unterstützen%20Sie%20Salam%20Aid

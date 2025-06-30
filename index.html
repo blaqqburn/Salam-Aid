@@ -1,90 +1,149 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Hilfreiches Herz für die Stimmlosen | قلب يساعد من لا صوت لهم</title>
- <style>
- body {
- font-family: 'Segoe UI', sans-serif;
- background: linear-gradient(to right, #f2f2f2, #e0f7fa);
- color: #333;
- margin: 0;
- padding: 0;
- }
- header {
- background: #004d40;
- color: white;
- padding: 1.5em;
- text-align: center;
- }
- main {
- padding: 2em;
- }
- section {
- margin-bottom: 2em;
- }
- .donate-box {
- background: #e8f5e9;
- padding: 1em;
- border-left: 5px solid #388e3c;
- }
- .qr-code {
- text-align: center;
- margin-top: 2em;
- }
- footer {
- background: #004d40;
- color: white;
- text-align: center;
- padding: 1em;
- position: fixed;
- width: 100%;
- bottom: 0;
- }
- img.qr {
- max-width: 180px;
- margin-top: 10px;
- }
- </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salam Aid – Aiding Heart for the Voiceless</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to bottom, #f9f9f9, #e0f2ff);
+      color: #222;
+    }
+    header {
+      background: linear-gradient(to right, #56ccf2, #2f80ed);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+    .section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+    }
+    .section h2 {
+      color: #2f80ed;
+      margin-bottom: 1rem;
+    }
+    .cta {
+      background: #2f80ed;
+      color: white;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1.2rem;
+      margin: 2rem 0;
+    }
+    .cta a {
+      color: white;
+      background: #2196f3;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .donation-box {
+      background-color: #f5faff;
+      border: 1px solid #cbe4ff;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+    .donation-box button {
+      background-color: #2f80ed;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      margin-top: 0.5rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .hidden-details {
+      display: none;
+      margin-top: 1rem;
+      font-family: monospace;
+      background-color: #eef6ff;
+      padding: 0.5rem;
+      border-left: 3px solid #2196f3;
+    }
+    .contact {
+      background-color: #222;
+      color: #eee;
+      text-align: center;
+      padding: 1rem;
+    }
+    .contact a {
+      color: #56ccf2;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 2rem;
+      padding-bottom: 1rem;
+    }
+    .arabic {
+      font-family: 'Cairo', sans-serif;
+      direction: rtl;
+      text-align: right;
+      font-size: 1.2rem;
+    }
+  </style>
 </head>
 <body>
 
- <header>
- <h1>Hilfreiches Herz für die Stimmlosen</h1>
- <h2 style="font-weight: normal;">قلب يساعد من لا صوت لهم</h2>
- <p> </p>
- </header>
+  <header>
+    <h1>Salam Aid</h1>
+    <p>Aiding Heart for the Voiceless • سَلامٌ لِلقُلوبِ المَقهُورَة</p>
+  </header>
 
- <main>
- <section>
- <h3> Warum helfen? / لماذا نساعد؟</h3>
- <p>
- Viele Menschen leiden in Stille – durch Krieg, Vertreibung, oder einfach durch das Vergessenwerden. 
- Diese Plattform gibt ihnen eine Stimme und sammelt Unterstützung, um echte Hilfe zu ermöglichen. 
- <br><br> يعاني الكثير من الناس في صمت — بسبب الحرب، التهجير، أو النسيان. هذه المنصة تعطيهم صوتًا وتجمع الدعم لتقديم المساعدة الحقيقية. </p>
- </section>
+  <section class="section">
+    <h2>Why We Exist</h2>
+    <p>Salam Aid is dedicated to providing real assistance and relief to people in hardship – with compassion, integrity, and unity.</p>
+    <p class="arabic">مهمتنا تقديم المساعدة الحقيقية للقلوب المقهورة والمتضررة – بكل صدق ورحمة.</p>
+  </section>
 
- <section class="donate-box">
- <h3> Unterstützen / الدعم المالي</h3>
- <p>
- Ein Teil jeder Spende wird an Hilfsorganisationen wie das Rote Kreuz oder UNICEF weitergeleitet. 
- Der Rest sichert mein Überleben und den Fortbestand dieser Plattform.
- </p>
- <p> جزء من كل تبرع يُرسل إلى منظمات إنسانية مثل الصليب الأحمر أو اليونيسف. والباقي يضمن بقائي واستمرار هذا المشروع. </p>
- <p><strong>Revolut:</strong> @burnakwan</p>
- </section>
+  <section class="section">
+    <h2>How You Can Help</h2>
+    <div class="cta">
+      <p>Support by donating through Revolut:</p>
+      <strong>@burnakwan</strong><br />
+      <div class="donation-box">
+        <p>Prefer Bank Transfer?</p>
+        <button onclick="document.getElementById('bankDetails').style.display='block';">Click to Reveal IBAN</button>
+        <div class="hidden-details" id="bankDetails">
+          IBAN: DE76 1234 5678 9012 3456 00<br/>
+          BIC: REVODEFFXXX<br/>
+          Name: Kweku Nsurogya Benjamin
+        </div>
+      </div>
+    </div>
+  </section>
 
- <div class="qr-code">
- <h3> QR-Code zum Teilen / رمز للمشاركة</h3>
- <img class="qr" src="AidingHeart_QR_Revolut.png" alt="Revolut QR Code">
- <p>Scanne den Code oder teile ihn, um zu unterstützen.</p>
- </div>
- </main>
+  <section class="section">
+    <h2>Feedback & Suggestions</h2>
+    <p>We are open to your ideas, transparency questions, and wishes. Reach out directly:</p>
+    <p>Email: <a href="mailto:help.salam.aid@gmail.com">help.salam.aid@gmail.com</a></p>
+  </section>
 
- <footer>
- &copy; 2025 Aiding Heart | Gemeinsam für Hoffnung 
- </footer>
+  <div class="contact">
+    <p>📧 For all inquiries and documentation: <a href="mailto:help.salam.aid@gmail.com">help.salam.aid@gmail.com</a></p>
+  </div>
+
+  <footer>
+    &copy; 2025 Salam Aid • Peace & Support Without Borders
+  </footer>
 
 </body>
 </html>

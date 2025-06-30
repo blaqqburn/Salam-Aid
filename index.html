@@ -2,147 +2,163 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Salam Aid – Aiding Heart for the Voiceless</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to bottom, #f9f9f9, #e0f2ff);
-      color: #222;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
     }
+
     header {
-      background: linear-gradient(to right, #56ccf2, #2f80ed);
+      background: linear-gradient(to right, #4caf50, #8bc34a);
       color: white;
+      padding: 30px 20px;
       text-align: center;
-      padding: 2rem 1rem;
     }
+
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 2.8em;
     }
+
     header p {
+      font-size: 1.1em;
       font-style: italic;
-      font-size: 1.1rem;
+      margin-top: 5px;
     }
-    .section {
+
+    section {
+      padding: 40px 20px;
       max-width: 900px;
-      margin: 2rem auto;
-      padding: 1rem 2rem;
+      margin: auto;
     }
-    .section h2 {
-      color: #2f80ed;
-      margin-bottom: 1rem;
+
+    section h2 {
+      color: #2e7d32;
+      font-size: 1.8em;
+      margin-bottom: 10px;
     }
-    .cta {
-      background: #2f80ed;
-      color: white;
-      padding: 1rem;
+
+    .mission {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .donation-box {
+      background: #e8f5e9;
+      padding: 20px;
       border-radius: 10px;
-      text-align: center;
-      font-size: 1.2rem;
-      margin: 2rem 0;
+      margin-top: 20px;
+      font-size: 1.1em;
     }
-    .cta a {
-      color: white;
-      background: #2196f3;
-      padding: 0.6rem 1.2rem;
-      border-radius: 5px;
-      text-decoration: none;
+
+    .donation-box strong {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .toggle-details {
+      margin-top: 10px;
+      cursor: pointer;
+      color: #2e7d32;
       font-weight: bold;
     }
-    .donation-box {
-      background-color: #f5faff;
-      border: 1px solid #cbe4ff;
-      padding: 1rem;
-      border-radius: 10px;
-      margin-top: 1rem;
-    }
-    .donation-box button {
-      background-color: #2f80ed;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      margin-top: 0.5rem;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    .hidden-details {
+
+    #bankDetails {
       display: none;
-      margin-top: 1rem;
-      font-family: monospace;
-      background-color: #eef6ff;
-      padding: 0.5rem;
-      border-left: 3px solid #2196f3;
+      margin-top: 10px;
     }
-    .contact {
-      background-color: #222;
+
+    .qr {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .qr img {
+      max-width: 200px;
+      border-radius: 10px;
+    }
+
+    .dove {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .dove img {
+      max-width: 100px;
+    }
+
+    footer {
+      background-color: #333;
       color: #eee;
       text-align: center;
-      padding: 1rem;
+      padding: 20px;
+      font-size: 0.9em;
     }
-    .contact a {
-      color: #56ccf2;
-      text-decoration: none;
-    }
-    footer {
+
+    .lang-note {
+      font-size: 0.95em;
       text-align: center;
-      font-size: 0.85rem;
-      color: #888;
-      margin-top: 2rem;
-      padding-bottom: 1rem;
-    }
-    .arabic {
-      font-family: 'Cairo', sans-serif;
-      direction: rtl;
-      text-align: right;
-      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #555;
     }
   </style>
+  <script>
+    function toggleDetails() {
+      const details = document.getElementById("bankDetails");
+      details.style.display = details.style.display === "none" ? "block" : "none";
+    }
+  </script>
 </head>
 <body>
 
   <header>
     <h1>Salam Aid</h1>
-    <p>Aiding Heart for the Voiceless • سَلامٌ لِلقُلوبِ المَقهُورَة</p>
+    <p>Aiding Heart for the Voiceless – قلب يُعين من لا صوت له</p>
   </header>
 
-  <section class="section">
-    <h2>Why We Exist</h2>
-    <p>Salam Aid is dedicated to providing real assistance and relief to people in hardship – with compassion, integrity, and unity.</p>
-    <p class="arabic">مهمتنا تقديم المساعدة الحقيقية للقلوب المقهورة والمتضررة – بكل صدق ورحمة.</p>
-  </section>
+  <section>
+    <div class="dove">
+      <img src="images/dove_peace.png" alt="Dove of Peace" />
+    </div>
 
-  <section class="section">
-    <h2>How You Can Help</h2>
-    <div class="cta">
-      <p>Support by donating through Revolut:</p>
-      <strong>@burnakwan</strong><br />
-      <div class="donation-box">
-        <p>Prefer Bank Transfer?</p>
-        <button onclick="document.getElementById('bankDetails').style.display='block';">Click to Reveal IBAN</button>
-        <div class="hidden-details" id="bankDetails">
-          IBAN: DE76 1234 5678 9012 3456 00<br/>
-          BIC: REVODEFFXXX<br/>
-          Name: Kweku Nsurogya Benjamin
-        </div>
+    <h2>Warum wir existieren</h2>
+    <p class="mission">
+      Salam Aid wurde gegründet, um aufrichtige Hilfe und Hoffnung in Regionen zu bringen, die unter Krieg, Missbrauch und menschlichem Leid leiden. Unsere Vision ist es, Brücken des Friedens zu bauen und die Stimmen der Unterdrückten zu stärken.<br><br>
+      Wir möchten transparent und ehrlich helfen. 85% aller Spenden werden direkt für humanitäre Zwecke eingesetzt, die restlichen 15% werden für den Erhalt der Plattform, Kommunikation und notwendige Grundkosten verwendet.
+    </p>
+
+    <div class="donation-box">
+      <strong>Spende direkt via Revolut:</strong>
+      Benutzername: <strong>@burnakwan</strong><br>
+      <span class="toggle-details" onclick="toggleDetails()">➕ Banküberweisung anzeigen</span>
+      <div id="bankDetails">
+        Name: Benjamin Kwaku Nsurogya<br>
+        IBAN: <strong>DE91 1001 0178 8554 8733 81</strong><br>
+        BIC: <strong>REVODEB2</strong>
       </div>
     </div>
-  </section>
 
-  <section class="section">
-    <h2>Feedback & Suggestions</h2>
-    <p>We are open to your ideas, transparency questions, and wishes. Reach out directly:</p>
-    <p>Email: <a href="mailto:help.salam.aid@gmail.com">help.salam.aid@gmail.com</a></p>
-  </section>
+    <div class="qr">
+      <p>Oder scanne zum Spenden:</p>
+      <img src="images/salam_aid_donation_qr.png" alt="QR für Spende" />
+    </div>
 
-  <div class="contact">
-    <p>📧 For all inquiries and documentation: <a href="mailto:help.salam.aid@gmail.com">help.salam.aid@gmail.com</a></p>
-  </div>
+    <div class="lang-note">
+      🌍 Diese Seite ist auch in Arabisch und Englisch verfügbar basierend auf Ihren Browsereinstellungen.
+    </div>
+
+    <h2>Transparenz & Dank</h2>
+    <p>
+      Jeder Unterstützer wird mit einem Dank erwähnt – wir zeigen Wertschätzung offen auf unserer Seite (außer bei Wunsch auf Anonymität). Gemeinsam schaffen wir Veränderung.
+    </p>
+  </section>
 
   <footer>
-    &copy; 2025 Salam Aid • Peace & Support Without Borders
+    &copy; 2025 Salam Aid – Frieden, Hoffnung, Mitgefühl.
   </footer>
 
 </body>
